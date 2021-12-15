@@ -15,3 +15,10 @@ The capbud network is given similarly, as:
 
 where each plan is an list of the cost and return respectively.
 This is placed on the first line of inputcapbud.txt, and on the second line is the starting capital, as an integer.
+
+If there are any troubles running the code please contact me at
+
+tf19683@bristol.ac.uk 
+or
+07847215661
+
