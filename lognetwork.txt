@@ -1,0 +1,16 @@
+The first step is to calculate the choices for the penultimate nodes. These calculations resulted in the following stage:
+
+[||up : 3, down : 4, weight : 3, choice : up||, ||up : 5, down : 1, weight : 1, choice : down||, ||up : 2, down : 3, weight : 2, choice : up||, ||up : 3, down : 4, weight : 3, choice : up||]
+
+Going to the next level, the calculations for each node yields:
+[||up : 3, down : 4, weight : 3, choice : up||, ||up : 5, down : 1, weight : 1, choice : down||, ||up : 2, down : 3, weight : 2, choice : up||, ||up : 3, down : 4, weight : 3, choice : up||]
+
+Going to the next level, the calculations for each node yields:
+[||up : 2, down : 3, weight : 4, choice : down||, ||up : 6, down : 2, weight : 4, choice : down||, ||up : 4, down : 5, weight : 6, choice : up||]
+
+Going to the next level, the calculations for each node yields:
+[||up : 2, down : 3, weight : 6, choice : up||, ||up : 3, down : 2, weight : 7, choice : up||]
+
+Finally, the cheapest path is simply traced through the solved network, making the solution:
+
+['down', 'up', 'down', 'up']

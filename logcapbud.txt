@@ -1,0 +1,15 @@
+The first step is to calculate the optimal value for the first subsidiary for maximum capital of 14 , resulting in:
+
+{2: 3, 3: 3, 4: 6, 5: 6, 6: 6, 7: 10, 8: 10, 9: 10, 10: 10, 11: 10, 12: 10, 13: 10, 14: 10},
+with the associated plans:
+{2: 1, 3: 1, 4: 2, 5: 2, 6: 2, 7: 3, 8: 3, 9: 3, 10: 3, 11: 3, 12: 3, 13: 3, 14: 3}
+
+The next level gives the optimal returns for the associated plans:
+{2: -1, 3: 5, 4: 5, 5: 8, 6: 8, 7: 11, 8: 12, 9: 12, 10: 15, 11: 15, 12: 15, 13: 15, 14: 15},
+{2: -1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 2, 8: 1, 9: 1, 10: 2, 11: 2, 12: 2, 13: 2, 14: 2}.
+
+The next level gives the optimal returns for the associated plans:
+{2: -1, 3: -1, 4: -1, 5: 4, 6: 10, 7: 10, 8: 13, 9: 13, 10: 16, 11: 18, 12: 18, 13: 21, 14: 21},
+{2: -1, 3: -1, 4: -1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 3, 12: 2, 13: 3, 14: 3}.
+
+Finally, the optimal solution can be traced backwards, making the maximum return 21, for a total cost of 13, by using the plans [2, 1, 3].

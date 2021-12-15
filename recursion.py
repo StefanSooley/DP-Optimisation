@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Node:
     def __init__(self, up, dn, weight=0):
         self.weight = weight
@@ -8,13 +9,13 @@ class Node:
         self.dn = dn
 
     def __repr__(self):
-        return (f"up : {self.up}, "
+        return (f"||up : {self.up}, "
                 f"down : {self.dn}, "
                 f"weight : {self.weight}, "
-                f"choice : {self.choice}")
+                f"choice : {self.choice}||")
 
 
-class Graph:
+class NGraph:
     def __init__(self, node_list):
         self.node_list = node_list
         self.stages = []
@@ -39,7 +40,6 @@ class Graph:
     def cheapest_path(self):
         """
         Calculates the cheapest path through the network, saving the choices made in the node attributes.
-        :return:
         """
         n = len(self.stages)
         for idx, stage in enumerate(reversed(self.stages)):
@@ -68,9 +68,10 @@ class Graph:
         init_choice = self.stages[0][0].choice
         rolling_i = 0 if init_choice == "up" else 1
 
+        # Calculates the path by going through and following the correct choice.
         path = [init_choice]
-        for idx,stage in enumerate(self.stages):
-            if idx != 0 and idx != len(self.stages)-1:
+        for idx, stage in enumerate(self.stages):
+            if idx != 0 and idx != len(self.stages) - 1:
                 choice = stage[rolling_i].choice
                 rolling_i += 1 if choice == "down" else 0
                 path.append(choice)
@@ -79,4 +80,4 @@ class Graph:
     def solve_cheapest_path(self):
         self.def_nodes()
         self.cheapest_path()
-        return self.find_path()
+        return self.find_path(), self.stages[:-1]
